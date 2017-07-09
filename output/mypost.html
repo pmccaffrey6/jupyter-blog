@@ -1,42 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>mypost</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+<html lang="english">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>data-science-blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/theme/styles.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/theme/slicknav.css">
+    <script src="/theme/jquery.slicknav.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript"
+	    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <![endif]-->
+<script>
+	$(function(){
+		$('#menu').slicknav({'label':''});
+	});
+</script>
+<link rel="icon" href="/theme/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon">
+<link rel="apple-touch-icon" sizes="114x114" href="/theme/apple-touch-icon-precomposed.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/theme/favicon152.png">
+<link rel="apple-touch-icon" sizes="196x196" href="/theme/favicon196.png">
+  </head>
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+  <body>
+    <div id="wrapper">
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">test1 </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="/category/posts.html">posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/mypost.html" rel="bookmark"
-           title="Permalink to mypost">mypost</a></h1>
-    </header>
+      <header>
+	<nav class="byline"><ul id="menu">
+            <li><a href="/">HOME</a></li>
+              <li class="active"><a href="/category/posts.html">posts</a></li>
+        </ul></nav><!-- /#menu -->
+        <div class="downloads">
+          <a href="#" class="fa fa-You can add links in your config file"></a>
+          <a href="#" class="fa fa-Another social link"></a>
+        </div>
+        <hgroup>
+          <h1>mypost</h1>
+  <footer class="article-footer">
+    <address class="vcard author">
+      By           <a class="url fn" href="/author/me.html">me</a>
+    </address>
+    <abbr class="published" title="2016-06-25T20:00:00+02:00">
+       on 25.06.2016
+    </abbr>
+  </footer><!-- /.post-info -->
+        </hgroup>
+  
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-06-25T20:00:00-05:00">
-                Published: Sat 25 June 2016
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="/author/me.html">me</a>
-        </address>
-<p>In <a href="/category/posts.html">posts</a>.</p>
-<p>tags: <a href="/tag/python.html">python</a> </p>
-</footer><!-- /.post-info -->      <style type="text/css">/*!
+    <meta name="tags" contents="python" />
+
+      </header>
+<section id="content" class="body article">
+  <div class="entry-content">
+    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1029,6 +1051,14 @@ h6:hover .anchor-link {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$c = \sqrt{a^2 + b^2}$$
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In [ ]:</div>
@@ -1070,37 +1100,25 @@ h6:hover .anchor-link {
 }
 </script>
 
-    </div><!-- /.entry-content -->
-
-  </article>
+  </div><!-- /.entry-content -->
+  <div class="article-share-tags">
+  <div class="end-article-tags">
+      <i class="fa fa-tag"></i>
+      <a href="/tag/python.html">python</a>
+  </div>
+  <div class='article-share'>
+      share -
+  </div>
+  </div>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
+<div class="neighbors">
+</div>
+      <footer>
+	  <a href="/pages/about.html" >About</a>
+	  <div class="right-footer">
+	  <a href="/categories.html" >Categories</a>
+	  <a href="/tags.html" >Tags</a>
+	  </div>
+      </footer>
 </body>
 </html>
