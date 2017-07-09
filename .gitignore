@@ -89,3 +89,7 @@ ENV/
 .ropeproject
 
 .idea
+
+# Pelican content
+content/
+output/

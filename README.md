@@ -26,12 +26,24 @@ This repo also includes a `Dockerfile` which will privision an Ubuntu:16.04 cont
 
 `docker run -it -v <path-to-jupyter-blog-repo>:/jupyter-blog -p <host port>:<container port> <image> /bin/bash`
 
-## Creating Blog Posts From Jupyter Notebooks:
-1. Create any notebooks you want in the `content` folder.
+## Storing And Working With Blog Content
+This repo exists as a general purpose build environment and example for blogging with pelican and jupyter. As such, the intention here is that many different blogs can run this build pipeline over their respective assets. In my personal case, I have my blog content in a private repo which I just mount onto this container.
+
+As such, the it's better to avoid the default tree structure of pelican wherein both the `content` and `output` folders are co-located alongside pelican's conf files etc... By avoiding this, you can easily manage this repo for building alongside your own separate public or private repo for content.
+
+Thus, it's best to mount your blog content in a separate root directory and reference it in your pelican commands. I use `~/blog-content` and, therefore, the pelican command to build the assets is like so:
+
+`pelican ~/blog-content/content -s /jupyter-blog/pelicanconf.py -o ~/blog-content/output`
+
+### Creating Blog Posts From Jupyter Notebooks:
+1. Create any notebooks you want in the `content` folder. Again, this is `~/blog-content/content`
 > Remember to create corresponding `.ipynb-meta` files.
 
 2. Edit pelicanconf.py to the lines that activate the `pelican-ipynb` plugin.
-3. Run `pelican content`.
 
-## Previewing Output:
+3. Run the `pelican`. As mentioned above, this is:
+
+`pelican ~/blog-content/content -s /jupyter-blog/pelicanconf.py -o ~/blog-content/output`.
+
+### Previewing Output:
 Switch to the `output` directory and run `python3 -m http.server`.
