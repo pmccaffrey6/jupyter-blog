@@ -1032,24 +1032,36 @@ h6:hover .anchor-link {
 </style>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [1]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 <div class="output_wrapper">
 <div class="output">
+
+
 <div class="output_area">
+
 <div class="prompt output_prompt">Out[1]:</div>
+
+
+
+
 <div class="output_text output_subarea output_execute_result">
 <pre>4</pre>
 </div>
+
+</div>
+
 </div>
 </div>
-</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -1059,17 +1071,372 @@ $$c = \sqrt{a^2 + b^2}$$
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-about-some-markdown?">How about some markdown?<a class="anchor-link" href="#How-about-some-markdown?">&#182;</a></h2><p>Can we add <code>markdown</code> here?</p>
+<p>Is all works well and good but if we let the line go for long enough we may see that it doesn't wrap appropriately. Will this wrap?</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [ ]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-<div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span> 
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#and so that was fine but what about this?</span>
+
+<span class="n">some_long_test_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">500000000</span><span class="p">,</span> <span class="mi">600000000</span><span class="p">,</span> <span class="mi">70000000</span><span class="p">,</span> <span class="mi">75000000</span><span class="p">,</span> <span class="mi">800000000</span><span class="p">,</span> <span class="mi">8500000</span><span class="p">,</span> <span class="mi">9000000</span><span class="p">,</span> <span class="mi">10000000</span><span class="p">,</span> <span class="mi">110000</span><span class="p">]</span>
 </pre></div>
+
 </div>
 </div>
 </div>
+
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">some_long_test_array</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[1,
+ 2,
+ 3,
+ 4,
+ 5,
+ 500000000,
+ 600000000,
+ 70000000,
+ 75000000,
+ 800000000,
+ 8500000,
+ 9000000,
+ 10000000,
+ 110000]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="k">import</span> <span class="o">*</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y z&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[8]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>x</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">diff</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>-sin(x)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integ</span> <span class="o">=</span> <span class="n">Integral</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">y</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">oo</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integ</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[11]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>Integral(x**y*exp(-x), (x, 0, oo))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">init_printing</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integ</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_latex output_subarea output_execute_result">
+$$\int_{0}^{\infty} x^{y} e^{- x}\, dx$$
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+
+pip3 list --format<span class="o">=</span>columns
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Package            Version    
+------------------ -----------
+bleach             2.0.0      
+blinker            1.4        
+certifi            2017.4.17  
+chardet            3.0.4      
+cycler             0.10.0     
+decorator          4.0.11     
+docutils           0.13.1     
+entrypoints        0.2.2      
+feedgenerator      1.9        
+html5lib           0.999999999
+idna               2.5        
+ipykernel          4.6.1      
+ipython            6.1.0      
+ipython-genutils   0.2.0      
+ipywidgets         6.0.0      
+jedi               0.10.2     
+Jinja2             2.9.6      
+jsonschema         2.6.0      
+jupyter            1.0.0      
+jupyter-client     5.0.1      
+jupyter-console    5.1.0      
+jupyter-core       4.3.0      
+Markdown           2.6.8      
+MarkupSafe         1.0        
+matplotlib         2.0.2      
+mistune            0.7.4      
+mpmath             0.19       
+nbconvert          5.2.1      
+nbformat           4.3.0      
+notebook           5.0.0      
+numpy              1.12.1     
+pandas             0.20.1     
+pandocfilters      1.4.1      
+pelican            3.7.1      
+pexpect            4.2.1      
+pickleshare        0.7.4      
+pip                9.0.1      
+plotly             2.0.12     
+prompt-toolkit     1.0.14     
+ptyprocess         0.5.1      
+Pygments           2.2.0      
+pyparsing          2.2.0      
+python-dateutil    2.6.0      
+pytz               2017.2     
+pyzmq              16.0.2     
+qtconsole          4.3.0      
+requests           2.18.1     
+scikit-learn       0.18.1     
+setuptools         20.7.0     
+simplegeneric      0.8.1      
+six                1.10.0     
+sympy              1.1        
+terminado          0.6        
+testpath           0.3.1      
+tornado            4.5.1      
+traitlets          4.3.2      
+Unidecode          0.4.21     
+urllib3            1.21.1     
+wcwidth            0.1.7      
+webencodings       0.5.1      
+wheel              0.29.0     
+widgetsnbextension 2.0.0      
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+ 
+
 
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var mathjaxscript = document.createElement('script');

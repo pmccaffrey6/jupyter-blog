@@ -44,5 +44,5 @@ THEME = "/jupyter-blog/themes/martin-pelican"
 # Ipynb plugin
 MARKUP = ('md', 'ipynb')
 
-PLUGIN_PATH = './plugins'
+PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
