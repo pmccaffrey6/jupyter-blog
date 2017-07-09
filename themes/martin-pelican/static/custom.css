@@ -3,5 +3,5 @@
 }
 
 .prompt {
-  display: none;
+  display: none !important;
 }

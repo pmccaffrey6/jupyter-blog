@@ -1,7 +1,7 @@
 jupyter-blog
 ---------------------
 
-This repo that shows a configuration that allows for blogging through Jupyter notebooks. This was heavily inspired by [this](https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/) great blog post.
+This repo shows a configuration that allows for blogging using Jupyter notebooks and pelican. This was heavily inspired by [this](https://www.dataquest.io/blog/how-to-setup-a-data-science-blog/) great blog post.
 
 ## A Few Notes About Theming In Pelican
 
@@ -19,7 +19,12 @@ In general, adding/changing themes in Pelican is pretty simple, you can create y
 Following that, customizing your theme is as simple as modifying the various Jinja templates and creating and referring to variables in your `pelicanconf.py`.
 
 ### Other Tips
-When using the `pelican-ipynb` plugin, there are a few other stylistic modifications that are recommended. In this repo, these are best `@import`ed as a `custom.css` file. The modifications include reducing the font-size of the `code_cell`s and hiding the `prompt` elements.
+When using the `pelican-ipynb` plugin, there are a few other stylistic modifications that are recommended. In this repo, these are included in a `custom.css` file imported in the `base.html` template. The modifications include reducing the font-size of the `code_cell`s and hiding the `prompt` elements.
+
+## Quick And Dirty With Docker
+This repo also includes a `Dockerfile` which will privision an Ubuntu:16.04 container set up with python and all required dependencies. This container is just meant to be a development convenience to bootstrap the environment necessary to craft and push out blog posts. The simplest way to work with this is just to build the container `docker build -t <container name> .` and then run the container, exposing a port and, importantly, mounting this repo within the container:
+
+`docker run -it -v <path-to-jupyter-blog-repo>:/jupyter-blog -p <host port>:<container port> <image> /bin/bash`
 
 ## Creating Blog Posts From Jupyter Notebooks:
 1. Create any notebooks you want in the `content` folder.
