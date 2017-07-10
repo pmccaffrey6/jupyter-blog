@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = 'peter'
+AUTHORS = ['peter','jonathan']
 SITENAME = 'data-science-blog'
 SITEURL = ''
 
