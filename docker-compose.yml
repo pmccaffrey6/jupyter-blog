@@ -5,7 +5,7 @@ services:
     build:
       context: ./webserver-container
     volumes:
-      - ~/peter_repos/some-folder/output:/output
+      - ${BLOG_CONTENT_PATH}/output:/output
     ports:
       - "8000:8000"
       - "35729:35729"
@@ -14,5 +14,5 @@ services:
     build:
       context: ./pelican-container
     volumes:
-      - ~/peter_repos/some-folder:/blog-content
-      - ~/peter_repos/jupyter-blog:/jupyter-blog
+      - ${BLOG_CONTENT_PATH}:/blog-content
+      - ${PWD}/pelican-container/pelican-resources:/pelican-resources

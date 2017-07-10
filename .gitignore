@@ -93,3 +93,6 @@ ENV/
 # Pelican content
 content/
 output/
+
+# OS X stuff
+.DS_Store
