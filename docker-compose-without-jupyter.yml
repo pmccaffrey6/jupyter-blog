@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   webserver:
     build:
       context: ./webserver-container
@@ -14,11 +13,5 @@ services:
   pelican:
     build:
       context: ./pelican-container
-    volumes:
-      - ${BLOG_CONTENT_PATH}:/blog-content
-
-  jupyter:
-    build:
-      context: ./jupyter-container
     volumes:
       - ${BLOG_CONTENT_PATH}:/blog-content

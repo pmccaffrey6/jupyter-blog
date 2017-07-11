@@ -8,4 +8,4 @@ RUN pip3 install -r requirements.txt
 
 WORKDIR /blog-content
 
-CMD ["pelican","content","-r","-s","/pelican-resources/pelicanconf.py","-o","./output"]
+CMD ["pelican","content","-r"]
