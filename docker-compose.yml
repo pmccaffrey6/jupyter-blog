@@ -1,21 +1,15 @@
 version: '3'
 
 services:
-
   webserver:
-    build:
-      context: ./webserver-container
-    volumes:
-      - ${BLOG_CONTENT_PATH}/output:/output
-    ports:
-      - "8000:8000"
-      - "35729:35729"
+    extends:
+      file: docker-compose-without-jupyter.yml
+      service: webserver
 
   pelican:
-    build:
-      context: ./pelican-container
-    volumes:
-      - ${BLOG_CONTENT_PATH}:/blog-content
+    extends:
+      file: docker-compose-without-jupyter.yml
+      service: pelican
 
   jupyter:
     build:
