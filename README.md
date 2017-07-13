@@ -5,7 +5,7 @@ jupyter-blog
 This repo exists as a general purpose build environment and example for blogging with pelican and jupyter. As such, the intention here is that many different blogs can run this build pipeline over their respective assets. In my personal case, I have my blog content in a separate repo.
 
 
-## How This Repo Is Set Up
+## How This Repo Is Organized
 This repo contains a composition of 3 Docker containers that work in concert to allow users to create blog posts and content from Jupyter notebooks. The three containers are as follows:
 
 1. **Jupyter container:** This contains a pre-configured Jupyter environment with some critical Python packages pre-installed. It will automaticappy boot up and become accessible at localhost on port `8888`. You may also choose to use your own Jupyter environment in which case refer to the section entitles "Using your own Jupyter environment" below.
@@ -13,6 +13,10 @@ This repo contains a composition of 3 Docker containers that work in concert to 
 2. **Pelican container:** This container contains the [pelican](https://github.com/getpelican/pelican) static site generator which runs and watches your content directory. Any time new content is saved there, it will automatically rebuild the site for live preview.
 
 3. **Webserver container:** This contaner contains [gulp-server-livereload](https://github.com/hiddentao/gulp-server-livereload) which sits in your local `output` directory watching for new output from pelican and automatically refreshing your browser to serve updated content at port `8888`.
+
+### Architecture
+***
+![Architecture](jupyter-blog-architecture.png)
 
 
 ## Setup
