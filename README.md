@@ -16,7 +16,7 @@ This repo contains a composition of 3 Docker containers that work in concert to 
 
 ### Architecture
 ***
-<img src="jupyter-blog-architecture.png" width="75%" align="center">
+<img src="jupyter-blog-architecture.png" max-width="50%" align="center">
 
 ## Setup
 ### Default
