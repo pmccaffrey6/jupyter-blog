@@ -52,9 +52,11 @@ When booted up this composition will look for an environment variable called `BL
 ```
 
 #### Using Your Own Jupyter Environment
-You might have noticed that this repo comes with two separate compose files. By default, `docker-compose.yml` is run which inherits the configuration for the `pelican` and `webserver` containers from a parent file `docker-compose-without-jupyter.yml` and then adds the configuration for the jupyter service. If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can run this command instead to only build and boot the pelican and webserver services:
+You might have noticed that this repo comes with two separate compose files. By default, both `docker-compose.yml` and `docke-compose.override.yml` are run in which the configuration for the `pelican` and `webserver` containers from `docker-compose.yml` are added to the configuration for the jupyter service from `docker-compose.override.yml`. If you're interested in reading more about compose overrides, you can [here](https://docs.docker.com/compose/extends/). 
 
-`docker-compose -f docker-compose-without-jupyter.yml -d up`
+If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can just tell compose to run only `docker-compose.yml` file (and therefore to build and boot just the pelican and webserver services):
+
+`docker-compose -f docker-compose.yml -d up`
 
 Then, simply run your Jupyter environment from the `BLOG_CONTENT_PATH`.
 
