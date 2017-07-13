@@ -22,19 +22,19 @@ This repo contains a composition of 3 Docker containers that work in concert to 
 
 ## Setup
 ### Default
-In order to get started, you simply have to have Docker installed and have an internet connection active. Then, all you have to do is run `docker-compose -d up` from within this directory, wait while it downloads resources and builds the required containers and then navigate to `http://0.0.0.0:8888` for Jupyter and `http://0.0.0.0:8000` for your live preview.
+In order to get started, you simply have to have [Docker](https://docs.docker.com/engine/installation/) installed and have an internet connection active. Then, all you have to do is run `docker-compose -d up` from within this directory, wait while it downloads resources and builds the required containers and then navigate to `http://0.0.0.0:8888` for Jupyter and `http://0.0.0.0:8000` for your live preview.
 
 ### Custom
 #### Blog Content
-When booted up this composition will look for an environment variable called `BLOG_CONTENT_PATH`. If not set (which, in the basic scenario, it wouldn't be), this will automatically set this variable to the `demo-content` folder in this directory. This is great to get started but, as you progress with your own blog you'll want to store your content in it's own separate directory. For me, I have another git repository where all of my blog content is stored (this includes, posts, `.ipynb` files, css, js etc....) The `demo-content` folder here serves as a good reference for how you should organize your blog content.  It should basically be laid out like this:
+When booted up this composition will look for an environment variable called `BLOG_CONTENT_PATH`. If not set (which, in the basic scenario, it wouldn't be), this will automatically set this variable to the `demo-content` folder in this repo. This is great to get started but, as you progress with your own blog you'll want to store your content in it's own separate directory. For me, I have another git repository where all of my blog content is stored (this includes, posts, `.ipynb` files, css, js etc....). That being said, the `demo-content` folder here still serves as a good reference for how you should organize your blog content.  It should basically be laid out like this:
 
 ```
 ├── content
 │   ├── pages
 │   │   └── about.md
 │   └── posts
-│       ├── mypost.ipynb
-│       └── mypost.ipynb-meta
+│       ├── ...<YOUR NOTEBOOK .ipynb FILES>
+│       └── ...<YOUR .ipynb-meta FILES>
 ├── output
 │   └──... <THIS IS POPULATED AUTOMATICALLY BY PELICAN>
 ├── pelicanconf.py
@@ -50,7 +50,7 @@ When booted up this composition will look for an environment variable called `BL
 ```
 
 #### Using Your Own Jupyter Environment
-You might have noticed that this repo comes with two separate compose files. By default, `docker-compose.yml` is run which inherits the configuration for the `pelican` and `webserver` containers from a parent file `docker-compose-without-jupyter.yml` and then adds the jupyter configuration. If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can run this command instead to only build and boot the pelican and webserver services:
+You might have noticed that this repo comes with two separate compose files. By default, `docker-compose.yml` is run which inherits the configuration for the `pelican` and `webserver` containers from a parent file `docker-compose-without-jupyter.yml` and then adds the configuration for the jupyter service. If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can run this command instead to only build and boot the pelican and webserver services:
 
 `docker-compose -f docker-compose-without-jupyter.yml -d up`
 
