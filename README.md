@@ -1,26 +1,62 @@
 jupyter-blog
 ---------------------
 
-This repo shows a configuration that allows for blogging using Jupyter notebooks and pelican. Thus, I make use of the excellent [pelican-ipynb](https://github.com/danielfrg/pelican-ipynb) plugin.
-
-## Setting Up This Environment With Docker
-
-
 ## Storing And Working With Blog Content
-This repo exists as a general purpose build environment and example for blogging with pelican and jupyter. As such, the intention here is that many different blogs can run this build pipeline over their respective assets. In my personal case, I have my blog content in a private repo which I just mount onto this container.
+This repo exists as a general purpose build environment and example for blogging with pelican and jupyter. As such, the intention here is that many different blogs can run this build pipeline over their respective assets. In my personal case, I have my blog content in a separate repo.
 
-As such, the it's better to avoid the default tree structure of pelican wherein both the `content` and `output` folders are co-located alongside pelican's conf files etc... By avoiding this, you can easily manage this repo for building alongside your own separate public or private repo for content.
 
-Thus, it's best to mount your blog content in a separate root directory and reference it in your pelican commands. I use `~/blog-content` and, therefore, the pelican command to build the assets is like so:
+## How This Repo Is Set Up
+This repo contains a composition of 3 Docker containers that work in concert to allow users to create blog posts and content from Jupyter notebooks. The three containers are as follows:
 
-`pelican ~/blog-content/content -s /jupyter-blog/pelicanconf.py -o ~/blog-content/output`
+1. **Jupyter container:** This contains a pre-configured Jupyter environment with some critical Python packages pre-installed. It will automaticappy boot up and become accessible at localhost on port `8888`. You may also choose to use your own Jupyter environment in which case refer to the section entitles "Using your own Jupyter environment" below.
+
+2. **Pelican container:** This container contains the [pelican](https://github.com/getpelican/pelican) static site generator which runs and watches your content directory. Any time new content is saved there, it will automatically rebuild the site for live preview.
+
+3. **Webserver container:** This contaner contains [gulp-server-livereload](https://github.com/hiddentao/gulp-server-livereload) which sits in your local `output` directory watching for new output from pelican and automatically refreshing your browser to serve updated content at port `8888`.
+
+
+## Setup
+### Default
+In order to get started, you simply have to have Docker installed and have an internet connection active. Then, all you have to do is run `docker-compose -d up` from within this directory, wait while it downloads resources and builds the required containers and then navigate to `http://0.0.0.0:8888` for Jupyter and `http://0.0.0.0:8000` for your live preview.
+
+### Custom
+#### Blog Content
+When booted up this composition will look for an environment variable called `BLOG_CONTENT_PATH`. If not set (which, in the basic scenario, it wouldn't be), this will automatically set this variable to the `demo-content` folder in this directory. This is great to get started but, as you progress with your own blog you'll want to store your content in it's own separate directory. For me, I have another git repository where all of my blog content is stored (this includes, posts, `.ipynb` files, css, js etc....) The `demo-content` folder here serves as a good reference for how you should organize your blog content.  It should basically be laid out like this:
+
+```
+├── content
+│   ├── pages
+│   │   └── about.md
+│   └── posts
+│       ├── mypost.ipynb
+│       └── mypost.ipynb-meta
+├── output
+│   └──... <THIS IS POPULATED AUTOMATICALLY BY PELICAN>
+├── pelicanconf.py
+├── plugins
+│   └──...<IPYNB PLUGIN>
+├── requirements.txt
+└── themes
+    └── <YOUR THEME FOLDER>
+        ├── static
+        │   └──...<THEME CSS AND JS>
+        └── templates
+            └──... <THEME JINJA TEMPLATES>
+```
+
+#### Using Your Own Jupyter Environment
+You might have noticed that this repo comes with two separate compose files. By default, `docker-compose.yml` is run which inherits the configuration for the `pelican` and `webserver` containers from a parent file `docker-compose-without-jupyter.yml` and then adds the jupyter configuration. If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can run this command instead to only build and boot the pelican and webserver services:
+
+`docker-compose -f docker-compose-without-jupyter.yml -d up`
+
+Then, simply run your Jupyter environment from the `BLOG_CONTENT_PATH`.
+
+> NOTE: This will still look for a `BLOG_CONTENT_PATH` environment variable and will still use this repo's `demo-content` folder by default. You are, of course, free (encouraged actually) to set your own: `export BLOG_CONTENT_PATH=/path/to/your/content`
 
 ### Creating Blog Posts From Jupyter Notebooks:
-1. Create any notebooks you want in the `content` folder. Again, this is `~/blog-content/content`
+1. Create any notebooks you want in the `content` folder. Again, this is `${BLOG_CONTENT_PATH}/content`
 > Remember to create corresponding `.ipynb-meta` files.
 
-
-## A Few Notes About Theming In Pelican
 
 ### Importing and Modifying Theme Structure
 This blog uses the wonderful [martin-pelican](https://github.com/cpaulik/martin-pelican) theme. It's been copied into this repo and committed here because it contains several specific changes that aren't in master. The majority of these are just customizations of the various Jinja templates.

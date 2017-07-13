@@ -16,3 +16,5 @@ services:
       context: ./jupyter-container
     volumes:
       - ${BLOG_CONTENT_PATH}:/blog-content
+    ports:
+      - "8888:8888"
