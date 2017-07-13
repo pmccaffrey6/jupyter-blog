@@ -24,6 +24,8 @@ This repo contains a composition of 3 Docker containers that work in concert to 
 ### Default
 In order to get started, you simply have to have [Docker](https://docs.docker.com/engine/installation/) installed and have an internet connection active. Then, all you have to do is run `docker-compose -d up` from within this directory, wait while it downloads resources and builds the required containers and then navigate to `http://0.0.0.0:8888` for Jupyter and `http://0.0.0.0:8000` for your live preview.
 
+By default, the jupyter container uses the standard password `pass` for all users.
+
 ### Custom
 #### Blog Content
 When booted up this composition will look for an environment variable called `BLOG_CONTENT_PATH`. If not set (which, in the basic scenario, it wouldn't be), this will automatically set this variable to the `demo-content` folder in this repo. This is great to get started but, as you progress with your own blog you'll want to store your content in it's own separate directory. For me, I have another git repository where all of my blog content is stored (this includes, posts, `.ipynb` files, css, js etc....). That being said, the `demo-content` folder here still serves as a good reference for how you should organize your blog content.  It should basically be laid out like this:

@@ -1,5 +1,4 @@
 FROM frolvlad/alpine-python3
-
 LABEL maintainer="pmccaffrey6@gmail.com"
 
 COPY  requirements.txt /requirements.txt

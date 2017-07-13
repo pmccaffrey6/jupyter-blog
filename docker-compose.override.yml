@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+
+  jupyter:
+    build:
+      context: ./jupyter-container
+    volumes:
+      - ${BLOG_CONTENT_PATH}:/blog-content
+    ports:
+      - "8888:8888"
+    entrypoint:
+      - jupyter
+      - notebook
+      - --config=/jupyter-config/jupyter_notebook_config.py
+      - --notebook-dir=/blog-content/content
+      - --ip=0.0.0.0
+      - --allow-root
