@@ -1,7 +1,7 @@
 jupyter-blog
 ---------------------
 
-## Storing And Working With Blog Content
+## Purpose And Introduction
 This repo exists as a general purpose build environment and example for blogging with pelican and jupyter. As such, the intention here is that many different blogs can run this build pipeline over their respective assets. In my personal case, I have my blog content in a separate repo.
 
 
@@ -52,7 +52,7 @@ When booted up this composition will look for an environment variable called `BL
 ```
 
 #### Using Your Own Jupyter Environment
-You might have noticed that this repo comes with two separate compose files. By default, both `docker-compose.yml` and `docke-compose.override.yml` are run in which the configuration for the `pelican` and `webserver` containers from `docker-compose.yml` are added to the configuration for the jupyter service from `docker-compose.override.yml`. If you're interested in reading more about compose overrides, you can [here](https://docs.docker.com/compose/extends/). 
+You might have noticed that this repo comes with two separate compose files. By default, both `docker-compose.yml` and `docke-compose.override.yml` are run in which the configuration for the `pelican` and `webserver` containers from `docker-compose.yml` are added to the configuration for the jupyter service from `docker-compose.override.yml`. If you're interested in reading more about compose overrides, you can [here](https://docs.docker.com/compose/extends/).
 
 If you have your own Jupyter environment (which could be in a container but certainly doesn't have to be), you can just tell compose to run only `docker-compose.yml` file (and therefore to build and boot just the pelican and webserver services):
 
