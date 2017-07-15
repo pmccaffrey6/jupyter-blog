@@ -25,6 +25,8 @@ This repo contains a composition of 3 Docker containers that work in concert to 
 In order to get started, you simply have to have [Docker](https://docs.docker.com/engine/installation/) installed and have an internet connection active. Then, all you have to do is run `docker-compose -d up` from within this directory, wait while it downloads resources and builds the required containers and then navigate to `http://0.0.0.0:8888` for Jupyter and `http://0.0.0.0:8000` for your live preview.
 
 > By default, the jupyter container uses the standard password `pass` for all users.
+>
+> Also, the jupyter notebook container here has the configuration `c.NotebookApp.iopub_data_rate_limit` set to a very high number (`10000000000` in this case). This is because the default value proves quite restrictive for visualization-heavy notebooks, which you can read more about [here](https://github.com/jupyter/notebook/issues/2287).
 
 ## Custom
 ### Blog Content
